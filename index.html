@@ -1,0 +1,28 @@
+<div id='app'>
+    {{ message }}
+    <!-- <input v-model="message" /> -->
+    <span v-bind:title="message">test</span>
+    <button v-on:click='click'></button>
+
+</div>
+
+<script type='module'>
+    import { ToyVue as Vue } from './toy-vue.js';
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 1
+        },
+        methods: {
+            click: () => {
+                alert(1);
+            }
+        }
+    });
+
+    setTimeout(() => {
+        app.data.message = 'Hello'
+    }, 1000);
+
+</script>
